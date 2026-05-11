@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Produtos - GreenStyle</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo">
+                <a href="index.html"><img src="imagem/WhatsApp Image 2026-04-13 at 22.11.12.jpeg" alt="" width="300"></a>
+                <h3>Lojão do Lar </h3>
+                <h2><span>Lírio dos Vales</span></h2>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Início</a>
+                <a href="produtos.html" class="active">Produtos</a>
+                <a href="contato.html">Contato</a>
+            </div>
+            <div class="nav-icons">
+                <i class="fas fa-search search-icon"></i>
+                <div class="cart-icon-container">
+                    <i class="fas fa-shopping-cart cart-icon"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Filtros e Produtos -->
+    <section class="products-page">
+        <div class="container">
+            <h2 class="section-title">Nossos Produtos</h2>
+            
+            <!-- Filtros -->
+            <div class="filters">
+                <button class="filter-btn active" data-category="all">Home</button>
+                <button class="filter-btn" data-category="camisetas">Cama</button>
+                <button class="filter-btn" data-category="calcas">Mesa</button>
+                <button class="filter-btn" data-category="vestidos">Banho</button>
+                <button class="filter-btn" data-category="acessorios">Infantil</button>
+            </div>
+
+            <!-- Carrossel de Produtos -->
+            <div class="carousel-section">
+                <h3>Promoções Relâmpago</h3>
+                <div class="carousel-container">
+                    <button class="carousel-btn prev-btn">&lt;</button>
+                    <div class="carousel-track" id="carouselTrack">
+                        <!-- Carrossel será preenchido via JS -->
+                    </div>
+                    <button class="carousel-btn next-btn">&gt;</button>
+                </div>
+            </div>
+
+            <!-- Lista de Produtos -->
+            <div class="products-grid" id="all-products">
+                <!-- Produtos serão carregados via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal do Carrinho -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-modal-content">
+            <div class="cart-header">
+                <h3>Seu Carrinho</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+            <div class="cart-total">
+                <strong>Total: R$ <span id="cartTotal">0</span></strong>
+            </div>
+            <button class="checkout-btn">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        loadAllProducts();
+        loadCarousel();
+        updateCartDisplay();
+        setupFilters();
+    </script>
+</body>
+</html>
